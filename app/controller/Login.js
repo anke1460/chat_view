@@ -1,17 +1,17 @@
-Ext.define('SenchaMobileLogin.controller.Login', {
+Ext.define('app.controller.Login', {
     extend: 'Ext.app.Controller',
 
-    config: {
+    config : {
     },
     
-    views : [
+    views  : [
         'Login'    
     ],   
 
-    stores: [
+    stores : [
     ],
 
-    refs: [
+    refs   : [
         {
             ref         : 'login',
             selector    : 'loginview',
@@ -36,8 +36,12 @@ Ext.define('SenchaMobileLogin.controller.Login', {
         console.log('login');
         alert('login');
         Ext.Ajax.request({
-            //Rest or Ajax Service for Login
-            url         : 'http://senchatouch2.firstfreight.com/ajax.aspx?fn=2',            
+            // RESTful or Ajax Service for Login 
+            // COMMUNITY INPUT: Call for various Language/DB Server examples:            
+            // (node/ruby/php/c#/couch/mongo/MySQL/wtf...)
+            url         : 'http://senchatouch2.firstfreight.com/ajax.aspx',
+            params      : {'fn': 1},
+            waitMsg     : 'Confirming Your Login...',            
             scope       : this,
             callback    : this.onLoginResult
         });
@@ -50,6 +54,5 @@ Ext.define('SenchaMobileLogin.controller.Login', {
     onForgotPasswordButtonTap: function() {
         alert('forgot password');
         console.log('forgot password');        
-    }
-    
+    }    
 });

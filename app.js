@@ -1,6 +1,6 @@
 Ext.Loader.setConfig({ enabled: true });
 
 Ext.application({
-    name: 'SenchaMobileLogin',
+    name: 'app',
     controllers: ['Login']
 });
