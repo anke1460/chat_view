@@ -1,0 +1,79 @@
+-------------------------------------------------------------------------------
+ Sencha Touch 2.0 Mobile Enterprise App Example
+-------------------------------------------------------------------------------
+
+OSS project intended to be a 'Fully Functional Real-World Enterprise Example'
+
+Similar to Sencha 'KitchenSink' - but geared towards Enterprise needs.
+
+Since I need to do this for my project anyways - why not share with everyone?
+
+Maybe a few people might even help out a bit!
+
+Demo website hosted @ http://senchatouch2.firstfreight.com
+usr: demo@example.com
+pwd: demo
+
+Setup should be as easy as:
+	1) Clone the git repository
+	2) Setup the IIS Webserver & MSSQL Database
+	3) Configure the Mobile Website in IIS
+	4) Point your Phone/Tablet Browser & Go
+
+To be Optimized for SmartPhones and Tablets
+
+	1) Testing Devices: 
+		IOS	    : iPhone | iPad
+		Android : HTC Thunderbolt Phone | Motorola Zoom Tablet
+
+	2) Software Components: 
+		i)   Mobile Website 
+		ii)  Web Server (ASP.NET Ajax/Json to MS SQL Server)
+
+Project Goals (enough already with everyone having to re-create this wheel)
+-------------------------------------------------------------------------------
+1) Provide a 'Soup-to-Nuts' github project with all 'Standard Login Features' 
+   in one easy to understand and well-documented project.
+
+2) Be easy to clone & implement as the basis of an Enterprise Mobile App.
+
+3) Solicit and encourage community input to provide a 'Best-Practices'
+   model for implementing a 'Rock-Solid' MVC Sencha Touch 2 project.
+
+4) Create How-to Guides (Blog posts) and Screencasts.
+
+5) Make it Easy and Accessible to get started - without Googling, forum posts
+   and stitching together all the bits and pieces (don't re-create the wheel).
+
+Data Storage
+-------------------------------------------------------------------------------
+	1) HTML5 LocalStorage or Encrypted Cookies	
+
+TODO:
+
+Validation of  Login Credentials
+-------------------------------------------------------------------------------
+ 	http://senchatouch2.firstfreight.com/ajax.aspx?fn=1
+ 	usr: demo@example.com 
+ 	pwd: demo
+
+ 	On Successful Login
+ 		Goto Dashboard.aspx - Authenticated Demo Landing Page
+ 		
+	On Unsuccessful Login
+		Popup Message - ( Username or password are not valid )
+
+Forgot Password
+-------------------------------------------------------------------------------
+ 	1) Popup to Enter Email (you@yourcompany.com)
+ 	2) Will send demo usr/pwd to any email entered 		
+ 	
+Remember Me
+-------------------------------------------------------------------------------
+	1) Store usr/pwd on local device - encrypted
+	2) Login page load - populate usr/pwd & checkbox
+
+Security
+-------------------------------------------------------------------------------
+	1) Validate Best-Practices for Athentication & Performance
+	

@@ -1,0 +1,21 @@
+
+#loginview {
+    padding: .8em;
+    background-color: #ccc;
+}
+
+.x-button-label {
+    padding: .3em;
+}
+
+#loginBottomNavBar {
+    padding-left:.8em;
+}
+
+#btnLogin {
+    width:8em;       
+}
+
+#btnForgotPassword {
+    width:8em;    
+}
