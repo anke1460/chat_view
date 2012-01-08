@@ -1,4 +1,4 @@
-Ext.define('app.view.Login', {
+Ext.define('app.view.Signup', {
     extend: 'Ext.Container',
     requires: [
         'Ext.TitleBar'
