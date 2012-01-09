@@ -5,7 +5,7 @@ Ext.define('app.controller.Login', {
     },
     
     views  : [
-        'Login'    
+        'Login'            
     ],   
 
     stores : [
@@ -17,6 +17,12 @@ Ext.define('app.controller.Login', {
             selector    : 'loginview',
             autoCreate  : true,
             xtype       : 'loginview'
+        },
+        {
+            ref         : 'signup',
+            selector    : 'signupview',
+            autoCreate  : true,
+            xtype       : 'signupview'
         }
     ],
 
@@ -29,6 +35,9 @@ Ext.define('app.controller.Login', {
             '#btnForgotPassword': {
                 tap: this.onForgotPasswordButtonTap
             },
+            '#btnSignup': {
+                tap: this.onSignupButtonTap
+            }
         });
     },
 
@@ -54,5 +63,15 @@ Ext.define('app.controller.Login', {
     onForgotPasswordButtonTap: function() {
         alert('forgot password');
         console.log('forgot password');        
-    }    
+    },   
+    
+    onSignupButtonTap: function() {
+        alert('signup');
+        Ext.dispatch({
+            controller : app.controllers.Signup,
+            action     : 'init',
+            animation  : {type:'pop'}
+        });        
+        console.log('signup');        
+    }  
 });

@@ -5,17 +5,17 @@
 }
 
 .x-button-label {
-    padding: .3em;
+    padding: 0 0 .1em 0;
 }
-
-#loginBottomNavBar {
-    padding-left:.8em;
+#btnSignup {
+    width: 5em;       
 }
 
 #btnLogin {
-    width:8em;       
+    width: 5em;       
 }
 
 #btnForgotPassword {
-    width:8em;    
+    width: 7em;       
 }
+

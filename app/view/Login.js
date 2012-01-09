@@ -13,27 +13,29 @@ Ext.define('app.view.Login', {
                 duration  : 250
             }
         },
-        items: 
-            [{
+        items: [
+            {
                 id: 'loginTitleBar',
                 xtype  : 'titlebar',
                 docked : 'top',
                 ui     : 'light',
-                title  : 'Sencha Touch 2.0 Mobile Login'            
+                title  : 'Sencha Touch 2.0 Login'            
             }, {
                 id     : 'loginview',
                 xtype  : 'fieldset',                            
-                items  : 
-                    [{
+                items  : [ 
+                    {
                         xtype       : 'emailfield',
                         placeHolder : 'you@yourcompany.com',
                         name        : 'Username',
+                        label       : 'Email',
                         id          : 'Username',
                         required    : true,
                     }, {
                         xtype       : 'passwordfield',
                         placeHolder : 'Password',
                         name        : 'Password',
+                        label        : 'Password',                        
                         required    : true
                     }, {   
                         xtype       : 'checkboxfield',
@@ -41,19 +43,19 @@ Ext.define('app.view.Login', {
                         name        : 'RememberMe',
                         label       : 'Keep me logged in?',
                         labelWidth  : '80%'                
-                    }]            
+                    }
+                ]            
             }, {            
                 id: 'loginBottomNavBar',
                 xtype  : 'toolbar',
-                docked : 'bottom',
-                title  : '',
-                items  : 
-                    [{
+                docked : 'bottom',                
+                items  : [
+                    {
                         xtype   : 'button',
+                        id      : 'btnSignup',
                         text    : 'Sign Up',
-                        ui      : 'back',                        
-                        scope   : this
-                    {, {
+                        ui      : 'back'                        
+                    }, {
                         xtype   : 'spacer'
                     }, {
                         xtype   : 'button',
@@ -66,8 +68,9 @@ Ext.define('app.view.Login', {
                         xtype   : 'button',
                         id      : 'btnForgotPassword',
                         text    : 'Forgot Password',   
-                        ui      : 'action'                                                                                    
-                    }]            
+                        ui      : 'forward'                                                                                    
+                    }
+                ]            
             },            
         ]
     }
