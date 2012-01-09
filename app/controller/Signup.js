@@ -36,12 +36,10 @@ Ext.define('app.controller.Signup', {
         console.log('signup');
         alert('signup');
         Ext.Ajax.request({
-            // RESTful or Ajax Service for Login 
-            // COMMUNITY INPUT: Call for various Language/DB Server examples:            
-            // (node/ruby/php/c#/couch/mongo/MySQL/wtf...)
+            // RESTful or Ajax Service for Login            
             url         : 'http://senchatouch2.firstfreight.com/ajax.aspx',
             params      : {'fn': 1},
-            waitMsg     : 'Processing you signup request...',            
+            waitMsg     : 'Processing your signup request...',            
             scope       : this,
             callback    : this.onSignupResult
         });

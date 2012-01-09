@@ -20,7 +20,8 @@ Ext.define('app.view.Signup', {
                 docked : 'top',
                 ui     : 'light',
                 title  : 'Signup for Account'            
-            }, {                
+            }, 
+            {                
                 id     : 'signupview',
                 xtype  : 'fieldset',                            
                 items  : [
@@ -65,7 +66,8 @@ Ext.define('app.view.Signup', {
                         ]
                     }
                 ]                                          
-            }, {            
+            }, 
+            {            
                 id: 'signupBottomNavBar',
                 xtype  : 'toolbar',
                 docked : 'bottom',                
@@ -75,9 +77,11 @@ Ext.define('app.view.Signup', {
                         text    : 'Back',
                         ui      : 'back',                        
                         scope   : this
-                    }, {
+                    }, 
+                    {
                         xtype   : 'spacer'
-                    }, {
+                    }, 
+                    {
                         xtype   : 'button',
                         id      : 'btnSignup',
                         text    : 'Signup',
