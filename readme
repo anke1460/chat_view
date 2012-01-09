@@ -33,7 +33,8 @@ To be Optimized for SmartPhones and Tablets
 		i)   Mobile Website 
 		ii)  Web Server (ASP.NET Ajax/Json to MS SQL Server)
 
-Project Goals (enough already with everyone having to re-create this wheel)
+-------------------------------------------------------------------------------
+ Project Goals (enough already with everyone having to re-create this wheel)
 -------------------------------------------------------------------------------
 1) COMPLETE - 'Soup-to-Nuts' github project with all 'Standard Features' 
    in one easy to understand and well-documented project.
@@ -49,14 +50,16 @@ Project Goals (enough already with everyone having to re-create this wheel)
 
 5) SUPPORT - How-to Guides (Blog posts), Screencasts & Documentation.
 
-Data Storage
+-------------------------------------------------------------------------------
+ Data Storage
 -------------------------------------------------------------------------------
 	1) Encrypted Cookies	
 	2) HTML5 LocalStorage 
 	3) Device Native Storage (Contacts | Calendar | Email)
 	4) Ajax Sync to DB Server
 
-Bonus Features
+-------------------------------------------------------------------------------
+ Bonus Features
 -------------------------------------------------------------------------------
 	1) Multi-Language
 	2) Themeable
