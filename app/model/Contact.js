@@ -1,4 +1,4 @@
-App.models.Contact = Ext.regModel('Contact', {
+JiaoYou.models.Contact = Ext.regModel('Contact', {
     fields: [
         {
             name    : 'id',

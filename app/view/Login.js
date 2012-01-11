@@ -1,51 +1,41 @@
-Ext.define('app.view.Login', {
-    extend: 'Ext.Container',
-    requires: [
-        'Ext.TitleBar'
-    ],
+Ext.define('JiaoYou.view.Login', {
+    extend: 'Ext.form.Panel',
+    xtype: 'login',
     config: {
         fullscreen : true,
-        layout     : {
-            type      : 'card',
-            animation : {
-                type      : 'slide',
-                direction : 'left',
-                duration  : 250
-            }
-        },
         items: [
             {
                 id: 'loginTitleBar',
                 xtype  : 'titlebar',
                 docked : 'top',
                 ui     : 'light',
-                title  : 'Sencha Touch 2.0 Login'            
+                title  : '找朋友，快去看看吧！'            
             }, 
             {
-                id     : 'loginview',
-                xtype  : 'fieldset',                            
+                cls     : 'loginview',
+                xtype  : 'fieldset',
+                height: 200,
+                instructions: '同城交友网，玩转同城',
                 items  : [ 
                     {
                         xtype       : 'emailfield',
-                        placeHolder : 'you@yourcompany.com',
                         name        : 'Username',
-                        label       : 'Email',
+                        label       : '邮箱',
                         id          : 'Username',
-                        required    : true,
+                        required    : true
                     }, 
                     {
                         xtype       : 'passwordfield',
-                        placeHolder : 'Password',
                         name        : 'Password',
-                        label        : 'Password',                        
+                        label       : '密码',                        
                         required    : true
                     }, 
                     {   
                         xtype       : 'checkboxfield',
                         id          : 'RememberMe',
                         name        : 'RememberMe',
-                        label       : 'Keep me logged in?',
-                        labelWidth  : '80%'                
+                        label       : '记住密码?',
+                        labelWidth  : '70%'                
                     }
                 ]            
             }, 
@@ -57,7 +47,7 @@ Ext.define('app.view.Login', {
                     {
                         xtype   : 'button',
                         id      : 'btnSignup',
-                        text    : 'Sign Up',
+                        text    : '立即注册',
                         ui      : 'back'                        
                     }, 
                     {
@@ -66,7 +56,7 @@ Ext.define('app.view.Login', {
                     {
                         xtype   : 'button',
                         id      : 'btnLogin',
-                        text    : 'Login',
+                        text    : '登录',
                         ui      : 'confirm'     
                     }, 
                     {
@@ -75,7 +65,7 @@ Ext.define('app.view.Login', {
                     {                
                         xtype   : 'button',
                         id      : 'btnForgotPassword',
-                        text    : 'Forgot Password',   
+                        text    : '忘记密码',   
                         ui      : 'forward'                                                                                    
                     }
                 ]            

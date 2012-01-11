@@ -1,67 +1,52 @@
-Ext.define('app.view.Signup', {
-    extend: 'Ext.Container',
-    requires: [
-        'Ext.TitleBar'
-    ],
+Ext.define('JiaoYou.view.Signup', {
+    extend: 'Ext.form.Panel',
+    xtype: 'signup',
     config: {
         fullscreen : true,
-        layout     : {
-            type      : 'card',
-            animation : {
-                type      : 'slide',
-                direction : 'left',
-                duration  : 250
-            }
-        },
         items: [
             {
-                id: 'signupTitleBar',
                 xtype  : 'titlebar',
                 docked : 'top',
                 ui     : 'light',
-                title  : 'Signup for Account'            
+                title  : '注册'            
             }, 
             {                
-                id     : 'signupview',
-                xtype  : 'fieldset',                            
+                xtype  : 'fieldset',
+                height : 250,
+                cls    : 'loginview',
+                instructions: '激活邮箱，即可登录',
                 items  : [
                     {
                         xtype       : 'emailfield',
-                        placeHolder : 'you@yourcompany.com',
-                        name        : 'firstname',
-                        id          : 'firstname',
-                        required    : true,
+                        name        : 'name',
+                        label       :'邮箱',
+                        required    : true
+                    },
+                    {   
+                        xtype       : 'textfield',
+                        name        : 'name',
+                        label       : '昵称',
+                        required    : true
                     }, 
                     {
                         xtype       : 'passwordfield',
-                        placeHolder : 'Password',
                         name        : 'Password',
-                        required    : true
-                    }, 
-                    {   
-                        xtype       : 'textfield',
-                        placeHolder : 'firstname',
-                        name        : 'firstname',
+                        label       : '密码',
                         required    : true
                     }, 
                     {    
-                        xtype       : 'textfield',
-                        placeHolder : 'lastname',
-                        name        : 'lastname',
-                        required    : true
-                    },
-                    {
-                        xtype: 'selectfield',
-                        name : 'rank',
-                        label: 'Rank',
+                        xtype       : 'selectfield',
+                        label       : '性别',
+                        name        : 'sex',
+                        required    : true,
                         options: [
                             {
-                                text : 'English',
-                                value: 'en'
+                                text : '男',
+                                value: 'man'
                             },
                             {
-                                text : 'Chinese',
-                                value: 'zh_CN'
+                                text : '女',
+                                value: 'female'
                             }
                         ]
                     }
@@ -74,17 +59,17 @@ Ext.define('app.view.Signup', {
                 items  : [
                     {
                         xtype   : 'button',
-                        text    : 'Back',
-                        ui      : 'back',                        
-                        scope   : this
+                        text    : '返回',
+                        id      : 'signup_back',
+                        ui      : 'back'
                     }, 
                     {
                         xtype   : 'spacer'
                     }, 
                     {
                         xtype   : 'button',
-                        id      : 'btnSignup',
-                        text    : 'Signup',
+                        id      : 'signup_save',
+                        text    : '保存',
                         ui      : 'confirm'                         
                     }
                 ]            

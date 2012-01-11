@@ -1,4 +1,4 @@
-App.models.User = Ext.regModel('User', {
+JiaoYou.models.User = Ext.regModel('User', {
     fields: [
         {
             name    : 'id',

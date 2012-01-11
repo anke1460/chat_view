@@ -1,40 +1,44 @@
-Ext.define('app.controller.Signup', {
+Ext.define('JiaoYou.controller.Signup', {
     extend: 'Ext.app.Controller',
-
-    config : {
+    config: {
     },
     
-    views  : [
+    views: [
         'Signup'    
     ],   
 
-    stores : [
+    stores: [
     ],
 
-    refs   : [
+    refs: [
         {
             ref         : 'signup',
-            selector    : 'signupview',
-            autoCreate  : true,
-            xtype       : 'signupview'
+            selector    : 'signupview'
+        },
+        {
+            ref         : 'login',
+            selector    : 'loginview'
         }
     ],
 
-    init: function() {        
-        this.getSignupView().create();
+    init: function() {
+      //  this.getSignupView().create();
         this.control({
-            '#btnSignup': {
+            '#signup_save': {
                 tap: this.onSignupButtonTap
             },            
-            '#btnBack': {
+            '#signup_back': {
                 tap: this.onBackButtonTap
             },
         });
     },
 
     onSignupButtonTap: function() {
-        console.log('signup');
-        alert('signup');
+      Ext.Msg.alert('消息', '邮件已发，请先激活', function(){
+        Ext.Viewport.setActiveItem(this.getLogin());   
+      }, this);
+        
+      /*
         Ext.Ajax.request({
             // RESTful or Ajax Service for Login            
             url         : 'http://senchatouch2.firstfreight.com/ajax.aspx',
@@ -43,6 +47,7 @@ Ext.define('app.controller.Signup', {
             scope       : this,
             callback    : this.onSignupResult
         });
+      */
     },  
 
     onSignupResult: function(request, success, response) {
@@ -50,7 +55,6 @@ Ext.define('app.controller.Signup', {
     },
 
     onBackButtonTap: function() {
-        alert('back');
-        console.log('back');        
+       Ext.Viewport.setActiveItem(this.getLogin());     
     }    
 });
