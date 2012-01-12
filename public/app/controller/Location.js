@@ -26,60 +26,53 @@ Ext.define('JiaoYou.controller.Location', {
     },
 
     onDisplayLocation: function() {
-       Ext.create('Ext.Picker', {
+     var pick =  Ext.create('Ext.Picker', {
+        doneButton: '选择',
+        cancelButton: '取消',
         slots: [
         {
             name : 'province',
             title: '省份',
-            data : [
-                {text: '湖北', value: '湖北'},
-                {text: '北京', value: '北京'},
-                {text: '上海', value: '上海'},
-                {text: '广州', value: '广州'}
-            ]
+            data : GenenrelData.province
         },
         {
             name : 'city',
             title: '城市',
             data : [
-                {text: '武汉', value: '武汉'},
-                {text: '北京', value: '北京'},
-                {text: '上海', value: '上海'},
-                {text: '广州', value: '广州'}
+                {text: '北京', value: '北京'}
             ]
         }
     ],
      listeners: {
-   
-
         pick: function(self, value, slots, op) {
-                    var a= {'湖北':'武汉','北京':'北京'};
-            console.log(2222)
-            console.log(value)
-            self.setSlots([
-                           {
-            name : 'province',
-            title: '省份',
-            data : [
-                {text: '湖北', value: '湖北'}
-            ]
-        },{
-            name : 'city',
-            title: '城市',
-            data : [
-                {text: '武汉', value: '武汉'},
-                {text: '宜昌', value: '宜昌'},
-                ]}
-            ]
-            );
-            self.setValueAnimated({
-                province: '湖北',
-                city: '宜昌'
-            })
-            
-             
+            console.log(6611)
+           console.log(value)
+          
         }
+    },
+    onDoneButtonTap: function(e){
+        console.log(666666666)
+        console.log(e)
+        console.log(pick.getValue())
     }
-}).show();   
+   });
+    pick.show();
+    pick.getItems().items[1].on('slotpick',function(value, node, opt){
+      var data = GenenrelData.city[value]
+      var city = [];
+      Ext.each(data, function(d){
+        city.push({text: d, value: d});
+      })
+      pick.getItems().items[2].setData(city);
+      console.log(4555)
+       pick.getDoneButton().enable();
+    });
+    
+     pick.getItems().items[1].on('itemtouchstart',function(value, node, opt){
+        pick.getDoneButton().disable();
+     });
+     pick.getItems().items[2].on('itemtouchstart',function(value, node, opt){
+        pick.getDoneButton().disable();
+     });
     }    
 });
