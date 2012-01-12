@@ -51,8 +51,6 @@ Ext.define('JiaoYou.controller.Location', {
         }
     },
     onDoneButtonTap: function(e){
-        console.log(666666666)
-        console.log(e)
         console.log(pick.getValue())
     }
    });
@@ -62,17 +60,17 @@ Ext.define('JiaoYou.controller.Location', {
       var city = [];
       Ext.each(data, function(d){
         city.push({text: d, value: d});
-      })
+      });
       pick.getItems().items[2].setData(city);
-      console.log(4555)
-       pick.getDoneButton().enable();
+      pick.getDoneButton().enable();
     });
     
      pick.getItems().items[1].on('itemtouchstart',function(value, node, opt){
         pick.getDoneButton().disable();
      });
+      
      pick.getItems().items[2].on('itemtouchstart',function(value, node, opt){
-        pick.getDoneButton().disable();
+       pick.getDoneButton().disable();
      });
     }    
 });
