@@ -8,6 +8,8 @@ Ext.define('JiaoYou.controller.Location', {
     ],   
 
     stores: [
+        'Users',
+        'Searches'
     ],
 
     refs: [
@@ -18,11 +20,15 @@ Ext.define('JiaoYou.controller.Location', {
     ],
 
     init: function() {
+        console.log(this.getSearchesStore())
+        aa=this.getSearchesStore()
+      //  this.getSearchesStore().load()
         this.control({
             '#location_search_button': {
                 tap: this.onDisplayLocation
             }
         });
+
     },
 
     onDisplayLocation: function() {

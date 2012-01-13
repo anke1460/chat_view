@@ -1,20 +1,11 @@
-﻿Ext.regStore('Users', {
-    model: 'User',
-    sorters: [{
-        property: 'lastname',
-        direction: 'ASC'
-    }],
-    proxy: {
-        type: 'localstorage',
-        id: 'users-store'
-    },
-    getGroupString: function (record) {
-        if (record && record.data.date) {
-            return record.get('date').toDateString();
-        } else {
-            return '';
-        }
-    }
-});
+﻿Ext.define('JiaoYou.store.Users', {
+    extend: 'Ext.data.Store',
+    model: 'JiaoYou.model.User',
+    getGroupString: function(record) {
+       return record.get('lastName')[0];
+   },
+   data: [
+    { query: 'Sencha' }
+    ]
 
-app.stores.users = Ext.StoreMgr.get('Users');
+});

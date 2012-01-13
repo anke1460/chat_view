@@ -1,6 +1,9 @@
 Ext.define('JiaoYou.view.ClientInterface', {
     extend: 'Ext.tab.Panel',
     xtype: 'client_interface',
+    requires: [
+        'JiaoYou.view.UserList'
+    ],
     config: {
         fullscreen : true,
         activeTab: 0,
@@ -25,6 +28,7 @@ Ext.define('JiaoYou.view.ClientInterface', {
              {
                 title: '同城',
                 iconCls: 'team',
+                layout: 'fit',
                 items: [
                   {
                     xtype: 'toolbar',
@@ -34,6 +38,9 @@ Ext.define('JiaoYou.view.ClientInterface', {
                         { xtype: 'spacer' },
                         { text: '保存' }
                     ]
+                  },
+                  {
+                    xtype: 'user_list'
                   }
                 ]
              },
@@ -57,7 +64,7 @@ Ext.define('JiaoYou.view.ClientInterface', {
                     items: 
                        maps= new Ext.Map({
                         title: 'Map',
-                       useCurrentLocation: true,
+                       // useCurrentLocation: true,
                         mapOptions: {
                             zoom: 11,
                             mapTypeId : google.maps.MapTypeId.ROADMAP,
@@ -67,35 +74,32 @@ Ext.define('JiaoYou.view.ClientInterface', {
                             }
                         },
                         listeners: {
-                            maprender: function(mapC, map) {
-                                 Ext.defer(function() {
-                                     navigator.geolocation.getCurrentPosition(onSuccess, onError);
+                          maprender: function(mapC, map) {
+                            console.log(73)
+                              Ext.defer(function() {
+                              navigator.geolocation.getCurrentPosition(onSuccess, onError);
                               
-                            function onSuccess(position) {
-                               console.log(7777)
-                               console.log(position)
-        		       var lo = new google.maps.LatLng(position.coords.latitude ,position.coords.longitude);
-                                var marker = new google.maps.Marker({
-                                  position: lo,
-                                  title : '她的位置',
-                                  map: map
-                               });
-                              var infowindow = new google.maps.InfoWindow({
-                                     content: 'Hey, 我在这里'
-                               });
-                               google.maps.event.addListener(marker, 'click', function() {
-                                  infowindow.open(map, marker);
-                               });
-                            }
-                            function onError(error) {
-                         
-                            }
+                                function onSuccess(position) {
+                                   console.log(7777)
+                                   console.log(position)
+                                   var lo = new google.maps.LatLng(position.coords.latitude ,position.coords.longitude);
+                                    var marker = new google.maps.Marker({
+                                      position: lo,
+                                      title : '她的位置',
+                                      map: map
+                                   });
+                                  var infowindow = new google.maps.InfoWindow({
+                                         content: 'Hey, 我在这里'
+                                   });
+                                   google.maps.event.addListener(marker, 'click', function() {
+                                      infowindow.open(map, marker);
+                                   });
+                                }
+                                function onError(error) {
+                             
+                                }
                            }, 800, this);
-                          
-                                console.log('first')
-                          
-                               
-                           
+                         console.log('first')
                             }
                         }
                         })

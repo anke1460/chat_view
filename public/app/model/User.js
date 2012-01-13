@@ -1,43 +1,11 @@
-JiaoYou.models.User = Ext.regModel('User', {
+Ext.define('JiaoYou.model.User', {
+    extend: 'Ext.data.Model',
     fields: [
-        {
-            name    : 'id',
-            type    : 'int'
-        }, 
-        {
-            name    : 'name',
-            type    : 'string'
-        }, 
-        {
-            name    : 'email',
-            type    : 'string'
-        }, 
-        {
-            name    : 'phone',
-            type    : 'string'
-        }
-        , 
-        {
-            name    : 'password',
-            type    : 'string'
-        }
-    ],
+                {name: "id",                type: "int"},
+                {name: "text",              type: "string"},
+                {name: "from_user",         type: "string"},
+                {name: "profile_image_url", type: "string"}
+            ],
 
-    validations: [
-        {
-            type    : 'presence',
-            name    : 'name'
-        }, 
-        {
-            type    : 'format',
-            name    : 'email',
-            matcher : /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
-            message : 'must be a valid email'
-        }
-    ],
-
-    proxy: {
-        type : 'localstorage',
-        id   : 'app-users'
-    }
+            proxy: 'twitter'
 });
